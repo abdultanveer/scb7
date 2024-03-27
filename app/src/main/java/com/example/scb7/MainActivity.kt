@@ -60,9 +60,18 @@ class MainActivity : AppCompatActivity() {
 
     fun launchHome(view: View) {
         //Intent hIntent = new Intent();
+        sum(10,20)
         var hIntent = Intent(this,HomeActivity::class.java)
         hIntent.putExtra("nkey","abdul ansari")
         startActivity(hIntent)
+
+    }
+
+    private fun sum(i: Int, i1: Int):Int {
+        var d = 20
+        var e = d * i
+
+        return i + i1
 
     }
 
