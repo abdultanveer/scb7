@@ -27,12 +27,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        Log.e(TAG,"resumed - waking up")
+        Log.e(TAG,"resumed - waking up -- restore state")
     }
 
     override fun onPause() {
         super.onPause()
-        Log.e(TAG,"paused- sleep")
+        Log.e(TAG,"paused- sleep-save state of ur  app")
 
     }
 
@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d(TAG,"destroyed --purged")
+        Log.d(TAG,"destroyed --purged --release resources")
 
     }
 

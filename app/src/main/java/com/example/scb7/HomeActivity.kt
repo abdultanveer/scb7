@@ -13,4 +13,10 @@ class HomeActivity : AppCompatActivity() {
        var name = intent.extras?.getString("nkey")
         tvHome.setText(name)
     }
+
+    override fun onStart() {
+        super.onStart()
+        throw NullPointerException("execption demo")
+
+    }
 }
