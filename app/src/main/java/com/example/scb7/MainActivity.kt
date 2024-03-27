@@ -1,5 +1,6 @@
 package com.example.scb7
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -18,6 +19,13 @@ class MainActivity : AppCompatActivity() {
         var name = etName.text.toString()
         tv.setText(name)
 
+
+    }
+
+    fun launchHome(view: View) {
+        //Intent hIntent = new Intent();
+        var hIntent = Intent(this,HomeActivity::class.java)
+        startActivity(hIntent)
 
     }
 }
