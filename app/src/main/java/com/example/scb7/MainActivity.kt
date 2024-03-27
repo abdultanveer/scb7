@@ -1,6 +1,7 @@
 package com.example.scb7
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -28,5 +29,10 @@ class MainActivity : AppCompatActivity() {
         hIntent.putExtra("nkey","abdul ansari")
         startActivity(hIntent)
 
+    }
+
+    fun launchDialer(view: View) {
+        var dIntent = Intent(Intent.ACTION_DIAL,Uri.parse("tel:9876543212"))
+        startActivity(dIntent)
     }
 }
