@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
     fun launchHome(view: View) {
         //Intent hIntent = new Intent();
         var hIntent = Intent(this,HomeActivity::class.java)
+        hIntent.putExtra("nkey","abdul ansari")
         startActivity(hIntent)
 
     }
