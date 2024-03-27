@@ -5,15 +5,49 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.AlarmClock
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+    var TAG = MainActivity::class.java.simpleName
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        Log.i(TAG,"created -mem allocated")
     }
+
+
+    override fun onStart() {
+        super.onStart()
+        Log.v(TAG,"started - visible")
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e(TAG,"resumed - waking up")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e(TAG,"paused- sleep")
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.w(TAG,"stopped --hibernate")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG,"destroyed --purged")
+
+    }
+
 
     fun clickHandler(view: View) {
         var tv: TextView = findViewById(R.id.textview)
