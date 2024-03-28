@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.asLiveData
 import com.example.scb7.data.Item
 import com.example.scb7.data.ItemDao
 import com.example.scb7.data.ItemRoomDatabase
@@ -34,5 +36,16 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-    fun retreiveDb(view: View) {}
+    fun retreiveDb(view: View) {
+        var tvDb:TextView = findViewById(R.id.tvDb)
+        retrieveItem(123).observe(this){
+            itemRetreived -> tvDb.text = itemRetreived.toString()
+        }
+
+    }
+
+    fun retrieveItem(id: Int): LiveData<Item> {
+        return dao.getItem(id).asLiveData()
+
+    }
 }
