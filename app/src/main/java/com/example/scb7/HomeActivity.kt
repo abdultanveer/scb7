@@ -31,6 +31,8 @@ class HomeActivity : AppCompatActivity() {
 
     fun commitDb(view: View) {
         var item = Item(123,"itemsname",20.0,20)
+        //globalscope -- structured concurrency
+        //launch = coroutine
         GlobalScope.launch {
             dao.insert(item)
         }
